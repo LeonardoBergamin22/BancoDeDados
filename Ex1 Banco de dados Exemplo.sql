@@ -11,7 +11,7 @@ NomeFunc VARCHAR(50),
 idCargo INT NOT NULL,
 SiglaDepto VARCHAR(15) NOT NULL,
 PRIMARY KEY (codigoFunc, NomeFunc),
-FOREIGN KEY (SiglaDepto) REFERENCES Departamento(SiglaDepto)
+CONSTRAINT FK_Departamento FOREIGN KEY (SiglaDepto) REFERENCES Departamento(SiglaDepto)
 );
 
 CREATE TABLE CargoFuncionario(
@@ -28,8 +28,8 @@ NomeFunc VARCHAR(15),
 CodigoFunc INT,
 SiglaDepto VARCHAR(15),
 PRIMARY KEY (SiglaProj, NomeProj),
-FOREIGN KEY (CodigoFunc) REFERENCES funcionario(CodigoFunc),
-FOREIGN KEY (SiglaDepto) REFERENCES departamento(SiglaDepto)
+CONSTRAINT FK_Funcionario FOREIGN KEY (CodigoFunc) REFERENCES funcionario(CodigoFunc),
+CONSTRAINT FK_Departamento FOREIGN KEY (SiglaDepto) REFERENCES departamento(SiglaDepto)
 
 );
 
